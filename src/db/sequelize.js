@@ -24,7 +24,7 @@ const Article = ArticleModel(sequelize, DataTypes);
 const User = UserModel(sequelize, DataTypes);
 
 const initDb = () => {
-  return sequelize.sync({ force: true }).then((_) => {
+  return sequelize.sync().then((_) => {
     articles.map((article) => {
       Article.create({
         title: article.title,
