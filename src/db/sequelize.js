@@ -11,7 +11,6 @@ const sequelize = new Sequelize(
   process.env.MYSQLPASSWORD, // Utilisez la variable d'environnement correspondant au mot de passe
   {
     host: process.env.MYSQLHOST, // Utilisez la variable d'environnement correspondant à l'adresse du serveur MySQL
-    port: process.env.MYSQLPORT, // Utilisez la variable d'environnement correspondant au port MySQL
     dialect: "mariadb", // Spécifiez le dialecte comme MySQL
     dialectOptions: {
       timezone: "Etc/GMT-2",
