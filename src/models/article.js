@@ -29,9 +29,7 @@ module.exports = (sequelize, DataTypes) => {
       body: {
         type: DataTypes.TEXT,
         allowNull: false,
-        unique: {
-          msg: "Ce contenu existe déja",
-        },
+        unique: false,
         validate: {
           notEmpty: { msg: "Le champ 'Contenu' ne doit pas être vide." },
           notNull: { msg: "Le contenu est une propriété requise." },
