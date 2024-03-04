@@ -6,8 +6,11 @@ const articles = require("./mock-articles");
 require("dotenv").config();
 
 const sequelize = new Sequelize(
-  process.env.DATABASE_URL, // Utilisez DATABASE_URL fourni par Railway pour la connexion
+  process.env.DATABASE,
+  process.env.DB_USERNAME,
+  process.env.DB_PASSWORD,
   {
+    host: process.env.DB_HOST,
     dialect: "mysql",
     dialectOptions: {
       useUTC: "Etc/GMT-2",
