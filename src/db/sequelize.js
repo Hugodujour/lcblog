@@ -6,12 +6,13 @@ const articles = require("./mock-articles");
 require("dotenv").config();
 
 const sequelize = new Sequelize(
-  "blog l&cvins",
-  process.env.DB_USERNAME,
-  process.env.DB_PASSWORD,
+  process.env.MYSQLDATABASE, // Utilisez la variable d'environnement correspondant au nom de la base de données
+  process.env.MYSQLUSER, // Utilisez la variable d'environnement correspondant au nom d'utilisateur
+  process.env.MYSQLPASSWORD, // Utilisez la variable d'environnement correspondant au mot de passe
   {
-    host: "127.0.0.1",
-    dialect: "mariadb",
+    host: process.env.MYSQLHOST, // Utilisez la variable d'environnement correspondant à l'adresse du serveur MySQL
+    port: process.env.MYSQLPORT, // Utilisez la variable d'environnement correspondant au port MySQL
+    dialect: "mysql", // Spécifiez le dialecte comme MySQL
     dialectOptions: {
       timezone: "Etc/GMT-2",
     },
