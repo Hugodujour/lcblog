@@ -6,14 +6,14 @@ const articles = require("./mock-articles");
 require("dotenv").config();
 
 const sequelize = new Sequelize(
-  "blog l&cvins",
+  process.env.DATABASE,
   process.env.DB_USERNAME,
   process.env.DB_PASSWORD,
   {
     host: process.env.DB_HOST,
     dialect: "mysql",
     dialectOptions: {
-      timezone: "Etc/GMT-2",
+      useUTC: "Etc/GMT-2",
     },
     logging: true,
   }
