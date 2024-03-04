@@ -9,10 +9,7 @@ const port = process.env.PORT || 3000;
 
 app.use(cors());
 
-app
-  .use(favicon(__dirname + "/favicon.ico"))
-  .use(morgan("dev"))
-  .use(bodyParser.json());
+app.use(favicon(__dirname + "/favicon.ico")).use(bodyParser.json());
 
 sequelize.initDb();
 
