@@ -3,7 +3,7 @@ const bcrypt = require("bcrypt");
 const ArticleModel = require("../models/article");
 const UserModel = require("../models/user");
 const articles = require("./mock-articles");
-require("dotenv").config();
+// require("dotenv").config();
 
 const sequelize = new Sequelize(
   process.env.MYSQLDATABASE, // Utilisez la variable d'environnement correspondant au nom de la base de données
