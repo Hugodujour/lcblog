@@ -1,11 +1,10 @@
 {
-  "name": "pokemon-api",
+  "name": "lcblog-api",
   "version": "1.0.0",
   "description": "The best API",
   "main": "app.js",
   "scripts": {
-    "start": "NODE_ENV=production node app.js",
-    "dev": "NODE_ENV=development nodemon app.js"
+    "start": "node app.js"
   },
   "author": "Hugo",
   "license": "ISC",
