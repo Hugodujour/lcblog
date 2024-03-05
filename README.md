@@ -36,7 +36,14 @@ Une fois le serveur en cours d'exécution, vous pouvez accéder à l'API à l'ai
 ## Exemple d'objet Article
 ```json
 {
-  "id": "1",
+  "id": 1,
   "title": "Titre de l'article",
-  "content": "Contenu de l'article..."
+  "body": "Contenu de l'article",
+  "picture": "Image de l'article",
+  "created": "2024-03-04T14:27:53.000Z",
+  "categories": [
+    "Catégorie 1",
+    "Catégorie 2,
+  ]
 }
+
