@@ -43,7 +43,7 @@ Une fois le serveur en cours d'exécution, vous pouvez accéder à l'API à l'ai
   "created": "2024-03-04T14:27:53.000Z",
   "categories": [
     "Catégorie 1",
-    "Catégorie 2,
+    "Catégorie 2",
   ]
 }
 
