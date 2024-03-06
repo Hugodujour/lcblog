@@ -90,6 +90,16 @@ module.exports = (sequelize, DataTypes) => {
             article.slug = slugify(article.title, { lower: true });
           }
         },
+        beforeUpdate: (article, options) => {
+          if (article.title && article.changed("title")) {
+            article.slug = slugify(article.title, { lower: true });
+          }
+        },
+        beforeSave: (article, options) => {
+          if (article.title && !article.changed("title")) {
+            article.slug = slugify(article.title, { lower: true });
+          }
+        },
       },
     }
   );
