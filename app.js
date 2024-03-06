@@ -10,7 +10,7 @@ const port = process.env.PORT || 3000;
 app.use(cors());
 app.use(favicon(__dirname + "/favicon.ico")).use(bodyParser.json());
 
-// sequelize.initDb();
+sequelize.initDb();
 
 app.get("/", (req, res) => {
   res.json("Hey !");
@@ -20,7 +20,10 @@ app.get("/", (req, res) => {
 require("./src/routes/findAllArticles")(app);
 
 // Find article by Primary Key
-require("./src/routes/findArticleByPk")(app);
+// require("./src/routes/findArticleByPk")(app);
+
+// Find by name
+require("./src/routes/findOne")(app);
 
 // Create article
 require("./src/routes/createArticle")(app);

@@ -1,3 +1,5 @@
+const slugify = require("slugify");
+
 const validCategories = [
   "Portrait Vigneron",
   "Parlons vins",
@@ -7,7 +9,7 @@ const validCategories = [
 ];
 
 module.exports = (sequelize, DataTypes) => {
-  return sequelize.define(
+  const Article = sequelize.define(
     "Article",
     {
       id: {
@@ -19,12 +21,17 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
         unique: {
-          msg: "Ce titre existe déja",
+          msg: "Ce titre existe déjà",
         },
         validate: {
           notEmpty: { msg: "Le champ 'Titre' ne doit pas être vide." },
           notNull: { msg: "Le titre est une propriété requise." },
         },
+      },
+      slug: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true,
       },
       body: {
         type: DataTypes.TEXT,
@@ -77,6 +84,15 @@ module.exports = (sequelize, DataTypes) => {
       timestamps: true,
       createdAt: "created",
       updatedAt: false,
+      hooks: {
+        beforeValidate: (article, options) => {
+          if (article.title) {
+            article.slug = slugify(article.title, { lower: true });
+          }
+        },
+      },
     }
   );
+
+  return Article;
 };
