@@ -37,8 +37,7 @@ const articles = [
   },
   {
     id: 5,
-    title:
-      "Stephane Yerle : « Je me bats pour une viticulture bio plus progressiste »",
+    title: "Stephane Yerle si coule",
     body: "*Qu’est-ce qu’un vin nature exactement ?* Tot d’abord, il faut savoir que officiellement ces vins, que certains caractérisent de “vivants”, oui de “purs” ou encore de “nus” n’existent pas dans la mesure...",
     picture:
       "https://emploi.ouest-france.fr/sites/default/files/styles/originale/public/fiches_metiers/90_stk305254.jpg?itok=rYXKzsDC",
