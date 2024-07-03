@@ -16,7 +16,7 @@ const sequelize = new Sequelize(
     dialectOptions: {
       useUTC: "Etc/GMT-2",
     },
-    logging: true,
+    logging: false,
   }
 );
 
