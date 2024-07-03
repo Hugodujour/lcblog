@@ -45,6 +45,18 @@ const initDb = () => {
   });
 };
 
+// Tester la connexion à la base de données
+async function testConnection() {
+  try {
+    await sequelize.authenticate();
+    console.log("Connection has been established successfully.");
+  } catch (error) {
+    console.error("Unable to connect to the database:", error);
+  }
+}
+
+testConnection();
+
 module.exports = {
   initDb,
   Article,
