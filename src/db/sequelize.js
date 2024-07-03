@@ -5,20 +5,22 @@ const UserModel = require("../models/user");
 const articles = require("./mock-articles");
 require("dotenv").config();
 
-const sequelize = new Sequelize(
-  process.env.DATABASE,
-  process.env.DB_USERNAME,
-  process.env.DB_PASSWORD,
-  {
-    host: process.env.DB_HOST,
-    port: process.env.DB_PORT,
-    dialect: "mysql",
-    dialectOptions: {
-      useUTC: "Etc/GMT-2",
-    },
-    logging: false,
-  }
-);
+// const sequelize = new Sequelize(
+//   process.env.DATABASE,
+//   process.env.DB_USERNAME,
+//   process.env.DB_PASSWORD,
+//   {
+//     host: process.env.DB_HOST,
+//     port: process.env.DB_PORT,
+//     dialect: "mysql",
+//     logging: true,
+//   }
+// );
+
+const sequelize = new Sequelize(process.env.DATABASE_URL, {
+  dialect: "mysql",
+  logging: false, // Désactiver le logging des requêtes SQL (optionnel)
+});
 
 const Article = ArticleModel(sequelize, DataTypes);
 const User = UserModel(sequelize, DataTypes);
